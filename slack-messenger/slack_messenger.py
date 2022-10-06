@@ -6,7 +6,6 @@
     Created By: Louis Tadman
 """
 
-import logging
 import requests
 import datetime
 import calendar
@@ -73,11 +72,10 @@ class SlackMessenger:
 
         if http_status == 200:
             success_msg = f"Successfully sent message to Slack \nSLACK MSG: {clean_msg}"
-            logging.info(success_msg)
+
         else:
             message_success = False
             error_msg = f"Error sending message to Slack \nHTTP STATUS: {http_status} \nERROR MSG: {response_txt}" \
                         f"\nSLACK MSG: {clean_msg}"
-            logging.error(error_msg)
 
         return message_success

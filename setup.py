@@ -1,10 +1,9 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.2'
+VERSION = '0.0.1'
 DESCRIPTION = 'Slack Messanger Client using Incoming Webhooks'
 LONG_DESCRIPTION = 'This is a simple package that helps send Slack Messages via Incoming Webhook URLs'
 
-# Setting up
 setup(
     name="slack-messenger",
     version=VERSION,
@@ -14,7 +13,7 @@ setup(
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     packages=find_packages(),
-    install_requires=["requests", "datetime", "calendar"],
+    install_requires=["requests==2.*", "datetime==*", "calendar==*"],
     keywords=['python', 'Slack', "Messenger"],
     classifiers=[
         "Development Status :: 3 - Alpha",
