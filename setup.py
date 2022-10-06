@@ -5,7 +5,7 @@ DESCRIPTION = 'Slack Messanger Client using Incoming Webhooks'
 LONG_DESCRIPTION = 'This is a simple package that helps send Slack Messages via Incoming Webhook URLs'
 
 setup(
-    name="slack-messenger",
+    name="slack-msngr",
     version=VERSION,
     author="Louis Tadman",
     author_email="<noreply@louistadman.com>",
