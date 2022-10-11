@@ -9,6 +9,7 @@
 import requests
 import datetime
 import calendar
+import logging
 
 
 class SlackMessenger:
@@ -71,12 +72,11 @@ class SlackMessenger:
         response_txt = response.text
 
         if http_status == 200:
-            success_msg = f"Successfully sent message to Slack \nSLACK MSG: {clean_msg}"
-            print(success_msg)
+            response_msg = f"Successfully sent message to Slack \nSLACK MSG: {clean_msg}"
         else:
             message_success = False
-            error_msg = f"Error sending message to Slack \nHTTP STATUS: {http_status} \nERROR MSG: {response_txt}" \
-                        f"\nSLACK MSG: {clean_msg}"
-            print(error_msg)
+            response_msg = f"Error sending message to Slack \nHTTP STATUS: {http_status} \nERROR MSG: {response_txt}" \
+                           f"\nSLACK MSG: {clean_msg}"
+            logging.error(response_msg)
 
-        return message_success
+        return message_success, response_msg
