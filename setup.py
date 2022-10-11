@@ -1,8 +1,11 @@
+from pathlib import Path
 from setuptools import setup, find_packages
 
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 DESCRIPTION = 'Slack Messanger Client using Incoming Webhooks'
-LONG_DESCRIPTION = 'This is a simple package that helps send Slack Messages via Incoming Webhook URLs'
+
+directory = Path(__file__).parent
+LONG_DESCRIPTION = (directory / "README.md").read_text()
 
 setup(
     name="slack_messenger",
@@ -12,6 +15,7 @@ setup(
     url="https://github.com/LouieT/slack-messenger",
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/markdown",
     packages=find_packages(),
     install_requires=["requests==2.*"],
     keywords=['python', 'Slack', "Messenger"],
@@ -27,5 +31,9 @@ setup(
         "Operating System :: Unix",
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
-    ]
+    ],
+    project_urls={
+        "Documentation": "https://github.com/LouieT/slack-messenger",
+        "Source": "https://github.com/LouieT/slack-messenger",
+    },
 )
